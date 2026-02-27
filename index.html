@@ -296,20 +296,63 @@
 
   /* VALUES */
   #values { background: var(--dark); }
-  .values-intro { max-width: 680px; margin-bottom: 70px; }
+  .values-intro { max-width: 800px; margin-bottom: 70px; }
   .values-intro p { font-size: 17px; line-height: 1.9; color: var(--text-light); }
-  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-  .value-item { display: flex; gap: 24px; align-items: flex-start; }
-  .value-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px; font-weight: 300; color: rgba(184,150,90,0.3);
-    line-height: 1; flex-shrink: 0; padding-top: 4px;
-  }
-  .value-body h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; color: var(--white); margin-bottom: 8px;
-  }
-  .value-body p { font-size: 14px; line-height: 1.8; }
+  .values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto 1fr;
+  column-gap: 60px;
+  row-gap: 0;
+}
+
+.value-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+.value-item:nth-child(2) { grid-column: 2; grid-row: 1 / 3; }
+.value-item:nth-child(3) { grid-column: 1; grid-row: 3 / 5; }
+.value-item:nth-child(4) { grid-column: 2; grid-row: 3 / 5; }
+
+.value-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: subgrid;
+  gap: 0 24px;
+  padding-bottom: 40px;
+}
+
+.value-item:nth-child(3),
+.value-item:nth-child(4) {
+  padding-bottom: 0;
+  padding-top: 40px;
+}
+
+.value-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300;
+  color: rgba(184,150,90,0.3);
+  line-height: 1;
+  grid-row: 1 / 3;
+  align-self: start;
+  padding-top: 4px;
+}
+
+.value-body {
+  display: contents;
+}
+
+.value-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--white);
+  margin-bottom: 0;
+  grid-row: 1;
+  align-self: end;
+  padding-bottom: 10px;
+}
+
+.value-body p {
+  font-size: 14px; line-height: 1.8;
+  grid-row: 2;
+  align-self: start;
+}
 
   /* CONTACT */
   #contact { background: var(--dark2); }
@@ -424,7 +467,12 @@
   <div class="hero-tag">Marketing Professional</div>
   <h1>Crafting <em>Brands</em><br>That Matter</h1>
   <p class="hero-desc">
-    I'm Charlotte — a dual-degree graduate in International Business and Marketing with hands-on experience across hospitality, tech, and the nonprofit sectors. I bridge strategy, creativity, and intercultural insight to build brands that connect.
+    I'm Charlotte, welcome to my personal branding space! <br>
+    As a dual-degree graduate in International Business and Marketing with hands-on experience across various sectors, 
+    I’ve learned the value in making oneself known. So let’s get to know each other! <br>
+    <br>
+    Here you’ll discover how I think, create, and work to bridge strategy, creativity, 
+    and intercultural insight to build brands that genuinely resonate. 
   </p>
   <a href="#goals" class="btn"><span>Explore My Journey</span></a>
 
@@ -452,7 +500,7 @@
         <div class="about-image">
           <div class="initials">C·V</div>
 			<picture>
-				<img src="cv.jpeg" alt="Flowers" style="width:100%;">
+				<img src="cv.jpeg" style="width:100%;">
 			</picture> 
         </div>
         <div class="about-image-border"></div>
@@ -463,13 +511,20 @@
           <h2>Where <em>Creativity</em><br>Meets Strategy</h2>
         </div>
         <p>
-          My name is Charlotte Vogel. I hold a dual Bachelor's degree in International Business from Hochschule Harz (Germany) and in Business Management & Marketing from Burgundy School of Business (France) — both completed in October 2024.
+          My name is Charlotte Elizabeth Vogel. I hold a dual Bachelor's degree in International Business from Hochschule 
+Harz (Germany) and in Business Management & Marketing from Burgundy School of Business (France), 
+both completed in October 2024.
         </p>
         <p>
-          My experience spans three countries and multiple industries: from managing business operations at a hospitality venture in Panama, to developing digital marketing content for a software company in Germany, to leading the marketing of an entire academic programme as a student project manager.
+          My experience spans three countries and multiple industries: from managing business operations at a 
+hospitality venture in Panama, to developing digital marketing content for a software company in 
+Germany, to leading the social media marketing of an entire academic programme as a student project 
+manager.
         </p>
         <p>
-          I'm drawn to roles where strategy meets creativity — building brand presence, crafting targeted campaigns, and navigating multicultural environments with ease. I speak conversational French and functional German, and thrive in international, cross-functional teams.
+          I'm drawn to roles where strategy meets creativity. I value building brand presence, crafting targeted 
+campaigns, and navigating multicultural outreach. I speak conversational French and functional German, 
+and thrive in international, cross-functional teams.
         </p>
         <div class="divider"></div>
         <div class="about-tags">
@@ -496,32 +551,45 @@
       <div class="goal-card reveal">
         <div class="goal-num">01</div>
         <div class="goal-title">Build Brands<br>with Purpose</div>
-        <p class="goal-desc">My experience across Panama, Germany, and the US has shown me that the most powerful brands stand for something real. I want to help companies define their identity, communicate their values, and build lasting audience relationships — not just drive clicks.</p>
+        <p class="goal-desc">My experience across Panama, Germany, and the United States has shown me that the most powerful 
+brands stand for something real. I want to help companies define their identity, communicate their values, 
+and build lasting audience relationships… not just drive clicks.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">02</div>
         <div class="goal-title">Deepen Digital<br>Marketing Expertise</div>
-        <p class="goal-desc">I'm actively expanding my knowledge in performance marketing and marketing automation. I believe great marketing is both creative and rigorously data-driven — and I want to master both sides of that equation.</p>
+        <p class="goal-desc">The way I see it, there’s never a time to stop learning. Especially not with the rate at which technology is 
+developing. This is why I’m actively expanding my knowledge in performance marketing and marketing 
+automation. Great marketing is both creative and rigorously data-driven, and I plan to keep up. </p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">03</div>
         <div class="goal-title">Lead International<br>Campaigns</div>
-        <p class="goal-desc">With dual degrees from institutions in Germany and France, plus work experience across three continents, I'm positioned to contribute to marketing strategies that cross borders and resonate across cultures without losing authenticity.</p>
+        <p class="goal-desc">With a double degree from institutions in Europe, plus tri-continental work experience, I'm positioned to 
+contribute to marketing strategies that cross borders and connect with diverse audiences while staying 
+authentic. International marketing thrives when cultural differences are considered in content 
+development.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">04</div>
         <div class="goal-title">Grow as a<br>Strategic Storyteller</div>
-        <p class="goal-desc">From leading the marketing of Hochschule Harz's International Business programme to running social media at a boutique eco-lodge, I've learned that the best campaigns start with a compelling story. I want to keep honing that craft at scale.</p>
+        <p class="goal-desc">From leading the social media marketing of Hochschule Harz's International Business programme to 
+running a marketing campaign at a resort and wellness center, I've learned that the best campaigns start 
+with a compelling story. I want to keep honing that craft at scale.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">05</div>
         <div class="goal-title">Join an Ambitious<br>Team</div>
-        <p class="goal-desc">I'm looking for a forward-thinking company or agency where I can learn fast, contribute meaningfully, and grow alongside talented colleagues who share a passion for excellent work, bold ideas, and a truly global perspective.</p>
+        <p class="goal-desc">I'm looking for a forward-thinking company or agency where I can learn fast, contribute meaningfully, 
+and grow alongside talented colleagues who share a passion for excellent work, bold ideas, and a truly 
+global perspective.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">06</div>
         <div class="goal-title">Drive Measurable<br>Impact</div>
-        <p class="goal-desc">Whether it's growing a brand's social following, improving customer targeting through market research, or optimising business processes — I want my work to produce results that are tangible, trackable, and genuinely valuable.</p>
+        <p class="goal-desc">Whether it's improving customer targeting through market research, growing a brand's social following, 
+or optimising business processes, I want my work to produce results that are tangible, trackable, and 
+incredibly valuable.</p>
       </div>
     </div>
   </div>
@@ -536,9 +604,16 @@
           <span class="section-tag">Expertise</span>
           <h2>My <em>Skills</em></h2>
         </div>
-        <p>I've built a versatile marketing skill set across real-world roles in three countries — from developing digital ad content for a German software startup to managing the full marketing presence of a hospitality business in Panama.</p>
-        <p>My dual degree in International Business and Business Management & Marketing gave me a strong foundation in strategy, finance, and communications, which I've complemented with hands-on project leadership and cross-functional team experience.</p>
-        <p>I'm a fast learner with a sharp eye for positioning and audience targeting, and I'm continuously expanding my expertise in performance marketing and marketing automation.</p>
+        <p>I've developed a versatile marketing skill set across real-world roles in three countries. In addition to my 
+work experience, my academic background has provided me with a strong grasp of business 
+fundamentals, complimenting my marketing career. </p>
+        <p>From crafting digital ad content for a German software startup to overseeing the full marketing presence 
+of a hospitality business in Panama, I’ve navigated diverse industries and markets.</p>
+        <p>With a dual degree in International Business and Business Management & Marketing I have built a solid 
+foundation in strategy, finance, and communications, while leading initiatives and collaborating in cross 
+functional teams. I am a quick learner with a keen eye for audience targeting, brand positioning, and 
+performance optimization. I'm also continuously evolving my knowledge in performance marketing and 
+automation. </p>
         <div class="divider"></div>
         <p style="font-size:13px; color:rgba(200,196,180,0.6)">Currently deepening my knowledge in performance marketing and marketing automation.</p>
       </div>
@@ -580,6 +655,24 @@
             </div>
             <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
           </div>
+            <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Content Creation</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+          </div>
+            <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Brand Strategy & Development</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+          </div>
+            <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Analytics & Automation</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -594,35 +687,43 @@
       <h2>My Core <em>Values</em></h2>
     </div>
     <div class="values-intro reveal">
-      <p>Working across three continents — from a small eco-lodge in Panama to a digital startup in Germany to university programmes in France — has taught me that good marketing is grounded in honest communication, cultural empathy, and genuine curiosity.</p>
+      <p>Good marketing is grounded in honest communication, cultural understanding, and genuine curiosity. <br>
+Good companies prioritize sustainability, innovation, and responsibility, aiming to make a positive impact. <br>
+Good people are driven by integrity, empathy, and commitment to continuous learning and growth.</p>
     </div>
     <div class="values-grid">
       <div class="value-item reveal">
         <div class="value-num">I</div>
         <div class="value-body">
           <h4>Authenticity First</h4>
-          <p>The most effective marketing is honest. I strive to create campaigns that feel real, reflect genuine brand values, and respect the intelligence of the audience — whether I'm writing for a beachside wellness retreat or a B2B software product.</p>
+          <p>The most effective marketing is honest. I strive to create campaigns that feel real, reflect genuine brand 
+values, and respect the intelligence of the audience, while keeping it fun.</p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">II</div>
         <div class="value-body">
-          <h4>Cultural Curiosity</h4>
-          <p>Having studied and worked in the US, Germany, France, and Panama, I've learned that understanding people's context is the foundation of any meaningful message. I bring this intercultural lens to every brief I work on.</p>
+          <h4>Results with Integrity</h4>
+          <p>I care about performance and accountability. I want my work to deliver measurable results. However, this 
+will never be at the expense of honesty, ethics, or long-term brand health.</p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">III</div>
         <div class="value-body">
           <h4>Continuous Learning</h4>
-          <p>Marketing evolves every day. I embrace change, actively seek new knowledge, and treat every project — from managing social media accounts to leading a semester-long programme marketing initiative — as an opportunity to grow.</p>
+          <p>Marketing evolves every day. I embrace change, actively seek new knowledge, and treat every project as an 
+opportunity to grow. Technology is ever-changing, I think we’d better pay attention to the future as well 
+as our history. </p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">IV</div>
         <div class="value-body">
-          <h4>Results with Integrity</h4>
-          <p>I care about performance and accountability. I want my work to deliver measurable results — but never at the expense of honesty, ethics, or long-term brand health.</p>
+          <h4>Cultural Curiosity</h4>
+          <p>Having studied and worked in the US, Germany, France, and Panama, I've learned that understanding 
+people's context is the foundation of any meaningful message. I bring this intercultural lens to every brief 
+I work on and I’m not afraid to ask questions!</p>
         </div>
       </div>
     </div>
@@ -638,7 +739,8 @@
     </div>
     <div class="contact-layout">
       <div class="contact-info reveal">
-        <h3>Whether you have an opportunity, a collaboration idea, or just want to talk marketing — I'd love to hear from you.</h3>
+        <h3>Whether you have an opportunity, a collaboration idea, or just want to talk marketing,
+           I'd love to hear from you!</h3>
         <div class="divider"></div>
         <!--<div class="contact-detail">
           <div class="contact-icon">✉️</div>
@@ -647,14 +749,31 @@
         <div class="contact-detail">
           <div class="contact-icon">🔗</div>
           <div>
-  <a href="https://www.linkedin.com/in/charlotte-e-vogel">linkedin.com/in/charlotte-e-vogel</a></div>
+            <a href="https://www.linkedin.com/in/charlotte-e-vogel">linkedin.com/in/charlotte-e-vogel</a></div>
         </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+              <path d="M12 3v13M7 11l5 5 5-5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <a href="https://www.dropbox.com/scl/fi/s4ce222or1zt2m2c3ogg1/Charlotte-Vogel-Resume-2025.pdf?rlkey=45bjrtv5uzzd9qjb6pftz89xj&dl=1" download>Download English Resume</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+              <path d="M12 3v13M7 11l5 5 5-5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        <a href="https://www.dropbox.com/scl/fi/c1gx7ni7fwh2b85qqi8v7/Charlotte-E-Vogel-Deutsch-Resume.pdf?rlkey=oqbv4ybjqmduyshhfjxekiy5v&dl=1" download> Download German Resume</a></div>
         <!--<div class="contact-detail">
           <div class="contact-icon">📍</div>
           <div>Berlin, Germany — open to remote & international</div>
         </div>-->
         <div class="divider"></div>
-        <p style="font-size:13px; color:rgba(200,196,180,0.6)">I typically respond within 24 hours. I'm currently open to full-time positions, internships, <br> and freelance projects in marketing.</p>
+        <p style="font-size:13px; color:rgba(200,196,180,0.6)">I typically respond within 24 hours. <br> 
+          I'm currently open to full-time positions, internships, and freelance projects in marketing.</p>
       </div>
       <div class="contact-form reveal">
         <div class="form-row">
