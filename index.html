@@ -775,32 +775,43 @@ I work on and I’m not afraid to ask questions!</p>
         <p style="font-size:13px; color:rgba(200,196,180,0.6)">I typically respond within 24 hours. <br> 
           I'm currently open to full-time positions, internships, and freelance projects in marketing.</p>
       </div>
-      <div class="contact-form reveal">
-        <div class="form-row">
-          <label>Your Name</label>
-          <input type="text" placeholder="Jane Smith">
-        </div>
-        <div class="form-row">
-          <label>Email Address</label>
-          <input type="email" placeholder="jane@company.com">
-        </div>
-        <div class="form-row">
-          <label>Topic</label>
-          <select>
-            <option value="">Please select …</option>
-            <option>Job Opportunity</option>
-            <option>Collaboration</option>
-            <option>Freelance Project</option>
-            <option>Just Saying Hello</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>Your Message</label>
-          <textarea placeholder="Tell me a little about what you have in mind …"></textarea>
-        </div>
-        <button class="form-submit"><span>Send Message</span></button>
-      </div>
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  
+  <!-- Dein Access Key — unsichtbar -->
+  <input type="hidden" name="access_key" value="d80d4d60-c6c6-44c6-bc91-2aaa983e7c4a">
+  
+  <!-- Betreff der E-Mail die du bekommst -->
+  <input type="hidden" name="subject" value="Neue Nachricht von deiner Website">
+
+  <div class="form-row">
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="Jane Smith" required>
+  </div>
+  <div class="form-row">
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="jane@company.com" required>
+  </div>
+  <div class="form-row">
+    <label>Topic</label>
+    <select name="topic">
+      <option value="" disabled selected>Please select …</option>
+      <option>Job Opportunity</option>
+      <option>Collaboration</option>
+      <option>Freelance Project</option>
+      <option>Connect</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label>Your Message</label>
+    <textarea name="message" placeholder="Tell me a little about what you have in mind …" required></textarea>
+  </div>
+
+  <!-- Spam-Schutz (unsichtbar) -->
+  <input type="checkbox" name="botcheck" style="display:none">
+
+  <button type="submit" class="form-submit"><span>Send Message</span></button>
+</form>
     </div>
   </div>
 </section>
@@ -814,7 +825,7 @@ I work on and I’m not afraid to ask questions!</p>
     <li><a href="#goals">Goals</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="copy">© 2025 Charlotte Vogel — Marketing Professional</div>
+  <div class="copy">© 2026 Charlotte Vogel — Marketing Professional</div>
 </footer>
 
 <script>
@@ -874,6 +885,23 @@ I work on and I’m not afraid to ask questions!</p>
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold-light)' : '';
     });
   });
+
+  // Contact form
+  const form = document.querySelector('.contact-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, { method: 'POST', body: data });
+    const json = await res.json();
+    if (json.success) {
+      form.innerHTML = `
+        <p style="font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--white); line-height:1.5;">
+          Thank you! ✦<br>
+          <span style="font-size:16px; color:var(--gold);">I'll get back to you soon.</span>
+        </p>`;
+    }
+  });
+
 </script>
 </body>
 </html>
