@@ -85,6 +85,30 @@
   .nav-links a:hover { color: var(--gold-light); }
   .nav-links a:hover::after { width: 100%; }
 
+  /* LANGUAGE SWITCHER */
+  .lang-switcher {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(184,150,90,0.3);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-btn:hover,
+  .lang-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
   /* SECTIONS */
   section { min-height: 100vh; }
 
@@ -211,8 +235,7 @@
   }
   .about-image::before {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(184,150,90,0.1), transparent 60%);
     z-index: 1;
   }
@@ -245,17 +268,12 @@
   }
 
   /* GOALS */
-  #goals { 
-    background: var(--dark);
-  }
+  #goals { background: var(--dark); }
   .goals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 2px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
   }
   .goal-card {
-    background: var(--dark2);
-    padding: 50px 40px;
+    background: var(--dark2); padding: 50px 40px;
     border: 1px solid rgba(184,150,90,0.08);
     position: relative; overflow: hidden;
     transition: border-color 0.4s, transform 0.4s;
@@ -275,7 +293,6 @@
     color: rgba(184,150,90,0.15); line-height: 1;
     position: absolute; top: 30px; right: 30px;
   }
-  .goal-icon { font-size: 28px; margin-bottom: 24px; }
   .goal-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 24px; font-weight: 400; color: var(--white);
@@ -286,12 +303,9 @@
   /* SKILLS */
   #skills { background: var(--dark2); }
   .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .skills-left p { margin-bottom: 20px; line-height: 1.9; }
   .skills-bars { display: flex; flex-direction: column; gap: 28px; }
-  .skill-item {}
   .skill-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
   .skill-name { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
-  .skill-pct { font-size: 12px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 18px; }
   .skill-bar { height: 1px; background: rgba(184,150,90,0.15); position: relative; }
   .skill-fill {
     position: absolute; top: 0; left: 0; height: 100%;
@@ -301,48 +315,30 @@
   .skill-fill.animated { width: var(--w); }
 
   /* VALUES */
-  #values {
-    background: var(--dark);
-  }
+  #values { background: var(--dark); }
   .values-intro { max-width: 800px; margin-bottom: 70px; }
   .values-intro p { font-size: 17px; line-height: 1.9; color: var(--text-light); }
-
   .values-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 60px;
-    row-gap: 48px;
+    column-gap: 60px; row-gap: 48px;
   }
-
   .value-item {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    align-items: flex-start;
+    display: flex; flex-direction: row;
+    gap: 24px; align-items: flex-start;
   }
-
   .value-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
+    font-size: 42px; font-weight: 300;
     color: rgba(184,150,90,0.3);
-    line-height: 1;
-    flex-shrink: 0;
-    width: 56px;
-    padding-top: 4px;
+    line-height: 1; flex-shrink: 0;
+    width: 56px; padding-top: 4px;
   }
-
   .value-body h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--white);
-    margin-bottom: 10px;
+    font-size: 22px; color: var(--white); margin-bottom: 10px;
   }
-
-  .value-body p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
+  .value-body p { font-size: 14px; line-height: 1.8; }
 
   /* CONTACT */
   #contact { background: var(--dark2); }
@@ -352,32 +348,24 @@
     font-size: 28px; color: var(--white); font-weight: 300;
     margin-bottom: 20px; line-height: 1.4;
   }
-  .contact-detail {
-    display: flex; gap: 16px; align-items: center; margin-bottom: 20px;
-  }
+  .contact-detail { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
   .contact-icon { font-size: 20px; width: 40px; text-align: center; }
   .contact-detail a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .contact-detail a:hover { color: var(--gold); }
-
   .contact-form { display: flex; flex-direction: column; gap: 0; }
   .form-row { display: flex; flex-direction: column; margin-bottom: 24px; }
   .form-row label {
     font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--gold); margin-bottom: 10px;
   }
-  .form-row input,
-  .form-row textarea,
-  .form-row select {
+  .form-row input, .form-row textarea, .form-row select {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(184,150,90,0.2);
     padding: 14px 16px; color: var(--white);
     font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300;
-    outline: none; transition: border-color 0.3s;
-    width: 100%;
+    outline: none; transition: border-color 0.3s; width: 100%;
   }
-  .form-row input:focus,
-  .form-row textarea:focus,
-  .form-row select:focus { border-color: var(--gold); }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--gold); }
   .form-row textarea { resize: vertical; height: 130px; }
   .form-row select { cursor: pointer; }
   .form-row select option { background: var(--dark2); }
@@ -405,10 +393,7 @@
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 20px;
   }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px; color: var(--white); letter-spacing: 0.08em;
-  }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); letter-spacing: 0.08em; }
   .footer-logo span { color: var(--gold); }
   .footer-links { display: flex; gap: 30px; list-style: none; }
   .footer-links a {
@@ -418,7 +403,7 @@
   .footer-links a:hover { color: var(--gold); }
   .copy { font-size: 12px; color: rgba(200,196,180,0.4); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     .nav-links { gap: 20px; }
@@ -427,38 +412,21 @@
     .goals-grid { grid-template-columns: 1fr; }
     .hero-stats { position: static; margin-top: 40px; }
     footer { flex-direction: column; align-items: flex-start; }
-
-    /* Values: single column, no overflow */
-    .values-grid {
-      grid-template-columns: 1fr;
-      column-gap: 0;
-      row-gap: 36px;
-    }
-    .values-intro p {
-      font-size: 15px;
-    }
-    .values-intro br {
-      display: none;
-    }
+    .values-grid { grid-template-columns: 1fr; column-gap: 0; row-gap: 36px; }
+    .values-intro p { font-size: 15px; }
+    .values-intro br { display: none; }
   }
-
   @media (max-width: 640px) {
     .nav-links { display: none; }
-    nav { justify-content: center; }
-
-    .value-num {
-      font-size: 32px;
-      width: 44px;
-    }
-    .value-body h4 {
-      font-size: 19px;
-    }
+    nav { justify-content: space-between; }
+    .value-num { font-size: 32px; width: 44px; }
+    .value-body h4 { font-size: 19px; }
+    .lang-btn { padding: 4px 7px; font-size: 9px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Cursor -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
@@ -466,41 +434,43 @@
 <nav>
   <a href="#home" class="nav-logo">Charlotte <span>Vogel</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#goals">Goals</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#values">Values</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav-about">About</a></li>
+    <li><a href="#goals" data-i18n="nav-goals">Goals</a></li>
+    <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+    <li><a href="#values" data-i18n="nav-values">Values</a></li>
+    <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
   </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="home">
   <div class="hero-line"></div>
-  <div class="hero-tag">Marketing Professional</div>
-  <h1>Crafting <em>Brands</em><br>That Matter</h1>
-  <p class="hero-desc">
+  <div class="hero-tag" data-i18n="hero-tag">Marketing Professional</div>
+  <h1 data-i18n="hero-h1">Crafting <em>Brands</em><br>That Matter</h1>
+  <p class="hero-desc" data-i18n="hero-desc">
     I'm Charlotte, welcome to my personal branding space! <br>
     As a dual-degree graduate in International Business and Marketing with hands-on experience across various sectors, 
-    I've learned the value in making oneself known. So let's get to know each other! <br>
-    <br>
+    I've learned the value in making oneself known. So let's get to know each other! <br><br>
     Here you'll discover how I think, create, and work to bridge strategy, creativity, 
-    and intercultural insight to build brands that genuinely resonate. 
+    and intercultural insight to build brands that genuinely resonate.
   </p>
-  <a href="#goals" class="btn"><span>Explore My Journey</span></a>
-
+  <a href="#goals" class="btn"><span data-i18n="hero-btn">Explore My Journey</span></a>
   <div class="hero-stats">
     <div>
       <div class="stat-num">2</div>
-      <div class="stat-label">Degrees Earned</div>
+      <div class="stat-label" data-i18n="stat-degrees">Degrees Earned</div>
     </div>
     <div>
       <div class="stat-num">3</div>
-      <div class="stat-label">Countries Worked In</div>
+      <div class="stat-label" data-i18n="stat-countries">Countries Worked In</div>
     </div>
     <div>
       <div class="stat-num">∞</div>
-      <div class="stat-label">Ambition</div>
+      <div class="stat-label" data-i18n="stat-ambition">Ambition</div>
     </div>
   </div>
 </section>
@@ -512,41 +482,26 @@
       <div class="reveal" style="position:relative">
         <div class="about-image">
           <div class="initials">C·V</div>
-          <picture>
-            <img src="cv.jpeg" style="width:100%;">
-          </picture> 
+          <picture><img src="cv.jpeg" style="width:100%;"></picture>
         </div>
         <div class="about-image-border"></div>
       </div>
       <div class="about-text reveal">
         <div class="section-header" style="margin-bottom:30px">
-          <span class="section-tag">About Me</span>
-          <h2>Where <em>Creativity</em><br>Meets Strategy</h2>
+          <span class="section-tag" data-i18n="about-tag">About Me</span>
+          <h2 data-i18n="about-h2">Where <em>Creativity</em><br>Meets Strategy</h2>
         </div>
-        <p>
-          My name is Charlotte Elizabeth Vogel. I hold a dual Bachelor's degree in International Business from Hochschule 
-Harz (Germany) and in Business Management & Marketing from Burgundy School of Business (France), 
-both completed in October 2024.
-        </p>
-        <p>
-          My experience spans three countries and multiple industries: from managing business operations at a 
-hospitality venture in Panama, to developing digital marketing content for a software company in 
-Germany, to leading the social media marketing of an entire academic programme as a student project 
-manager.
-        </p>
-        <p>
-          I'm drawn to roles where strategy meets creativity. I value building brand presence, crafting targeted 
-campaigns, and navigating multicultural outreach. I speak conversational French and functional German, 
-and thrive in international, cross-functional teams.
-        </p>
+        <p data-i18n="about-p1">My name is Charlotte Elizabeth Vogel. I hold a dual Bachelor's degree in International Business from Hochschule Harz (Germany) and in Business Management & Marketing from Burgundy School of Business (France), both completed in October 2024.</p>
+        <p data-i18n="about-p2">My experience spans three countries and multiple industries: from managing business operations at a hospitality venture in Panama, to developing digital marketing content for a software company in Germany, to leading the social media marketing of an entire academic programme as a student project manager.</p>
+        <p data-i18n="about-p3">I'm drawn to roles where strategy meets creativity. I value building brand presence, crafting targeted campaigns, and navigating multicultural outreach. I speak conversational French and functional German, and thrive in international, cross-functional teams.</p>
         <div class="divider"></div>
         <div class="about-tags">
-          <span class="tag">Marketing Strategy</span>
-          <span class="tag">Social Media</span>
-          <span class="tag">Market Research</span>
-          <span class="tag">Brand Positioning</span>
-          <span class="tag">Intercultural Communication</span>
-          <span class="tag">Project Management</span>
+          <span class="tag" data-i18n="tag1">Marketing Strategy</span>
+          <span class="tag" data-i18n="tag2">Social Media</span>
+          <span class="tag" data-i18n="tag3">Market Research</span>
+          <span class="tag" data-i18n="tag4">Brand Positioning</span>
+          <span class="tag" data-i18n="tag5">Intercultural Communication</span>
+          <span class="tag" data-i18n="tag6">Project Management</span>
         </div>
       </div>
     </div>
@@ -557,52 +512,39 @@ and thrive in international, cross-functional teams.
 <section id="goals">
   <div class="section-wrap">
     <div class="section-header reveal">
-      <span class="section-tag">Vision & Goals</span>
-      <h2>Where I'm <em>Heading</em></h2>
+      <span class="section-tag" data-i18n="goals-tag">Vision & Goals</span>
+      <h2 data-i18n="goals-h2">Where I'm <em>Heading</em></h2>
     </div>
     <div class="goals-grid">
       <div class="goal-card reveal">
         <div class="goal-num">01</div>
-        <div class="goal-title">Build Brands<br>with Purpose</div>
-        <p class="goal-desc">My experience across Panama, Germany, and the United States has shown me that the most powerful 
-brands stand for something real. I want to help companies define their identity, communicate their values, 
-and build lasting audience relationships… not just drive clicks.</p>
+        <div class="goal-title" data-i18n="goal1-title">Build Brands<br>with Purpose</div>
+        <p class="goal-desc" data-i18n="goal1-desc">My experience across Panama, Germany, and the United States has shown me that the most powerful brands stand for something real. I want to help companies define their identity, communicate their values, and build lasting audience relationships… not just drive clicks.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">02</div>
-        <div class="goal-title">Deepen Digital<br>Marketing Expertise</div>
-        <p class="goal-desc">The way I see it, there's never a time to stop learning. Especially not with the rate at which technology is 
-developing. This is why I'm actively expanding my knowledge in performance marketing and marketing 
-automation. Great marketing is both creative and rigorously data-driven, and I plan to keep up. </p>
+        <div class="goal-title" data-i18n="goal2-title">Deepen Digital<br>Marketing Expertise</div>
+        <p class="goal-desc" data-i18n="goal2-desc">The way I see it, there's never a time to stop learning. Especially not with the rate at which technology is developing. This is why I'm actively expanding my knowledge in performance marketing and marketing automation. Great marketing is both creative and rigorously data-driven, and I plan to keep up.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">03</div>
-        <div class="goal-title">Lead International<br>Campaigns</div>
-        <p class="goal-desc">With a double degree from institutions in Europe, plus tri-continental work experience, I'm positioned to 
-contribute to marketing strategies that cross borders and connect with diverse audiences while staying 
-authentic. International marketing thrives when cultural differences are considered in content 
-development.</p>
+        <div class="goal-title" data-i18n="goal3-title">Lead International<br>Campaigns</div>
+        <p class="goal-desc" data-i18n="goal3-desc">With a double degree from institutions in Europe, plus tri-continental work experience, I'm positioned to contribute to marketing strategies that cross borders and connect with diverse audiences while staying authentic. International marketing thrives when cultural differences are considered in content development.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">04</div>
-        <div class="goal-title">Grow as a<br>Strategic Storyteller</div>
-        <p class="goal-desc">From leading the social media marketing of Hochschule Harz's International Business programme to 
-running a marketing campaign at a resort and wellness center, I've learned that the best campaigns start 
-with a compelling story. I want to keep honing that craft at scale.</p>
+        <div class="goal-title" data-i18n="goal4-title">Grow as a<br>Strategic Storyteller</div>
+        <p class="goal-desc" data-i18n="goal4-desc">From leading the social media marketing of Hochschule Harz's International Business programme to running a marketing campaign at a resort and wellness center, I've learned that the best campaigns start with a compelling story. I want to keep honing that craft at scale.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">05</div>
-        <div class="goal-title">Join an Ambitious<br>Team</div>
-        <p class="goal-desc">I'm looking for a forward-thinking company or agency where I can learn fast, contribute meaningfully, 
-and grow alongside talented colleagues who share a passion for excellent work, bold ideas, and a truly 
-global perspective.</p>
+        <div class="goal-title" data-i18n="goal5-title">Join an Ambitious<br>Team</div>
+        <p class="goal-desc" data-i18n="goal5-desc">I'm looking for a forward-thinking company or agency where I can learn fast, contribute meaningfully, and grow alongside talented colleagues who share a passion for excellent work, bold ideas, and a truly global perspective.</p>
       </div>
       <div class="goal-card reveal">
         <div class="goal-num">06</div>
-        <div class="goal-title">Drive Measurable<br>Impact</div>
-        <p class="goal-desc">Whether it's improving customer targeting through market research, growing a brand's social following, 
-or optimising business processes, I want my work to produce results that are tangible, trackable, and 
-incredibly valuable.</p>
+        <div class="goal-title" data-i18n="goal6-title">Drive Measurable<br>Impact</div>
+        <p class="goal-desc" data-i18n="goal6-desc">Whether it's improving customer targeting through market research, growing a brand's social following, or optimising business processes, I want my work to produce results that are tangible, trackable, and incredibly valuable.</p>
       </div>
     </div>
   </div>
@@ -614,84 +556,27 @@ incredibly valuable.</p>
     <div class="skills-layout">
       <div class="reveal">
         <div class="section-header">
-          <span class="section-tag">Expertise</span>
-          <h2>My <em>Skills</em></h2>
+          <span class="section-tag" data-i18n="skills-tag">Expertise</span>
+          <h2 data-i18n="skills-h2">My <em>Skills</em></h2>
         </div>
-        <p>I've developed a versatile marketing skill set across real-world roles in three countries. In addition to my 
-work experience, my academic background has provided me with a strong grasp of business 
-fundamentals, complimenting my marketing career. </p>
-        <p>From crafting digital ad content for a German software startup to overseeing the full marketing presence 
-of a hospitality business in Panama, I've navigated diverse industries and markets.</p>
-        <p>With a dual degree in International Business and Business Management & Marketing I have built a solid 
-foundation in strategy, finance, and communications, while leading initiatives and collaborating in cross 
-functional teams. I am a quick learner with a keen eye for audience targeting, brand positioning, and 
-performance optimization. I'm also continuously evolving my knowledge in performance marketing and 
-automation. </p>
+        <p data-i18n="skills-p1">I've developed a versatile marketing skill set across real-world roles in three countries. In addition to my work experience, my academic background has provided me with a strong grasp of business fundamentals, complimenting my marketing career.</p>
+        <p data-i18n="skills-p2">From crafting digital ad content for a German software startup to overseeing the full marketing presence of a hospitality business in Panama, I've navigated diverse industries and markets.</p>
+        <p data-i18n="skills-p3">With a dual degree in International Business and Business Management & Marketing I have built a solid foundation in strategy, finance, and communications, while leading initiatives and collaborating in cross functional teams. I am a quick learner with a keen eye for audience targeting, brand positioning, and performance optimization.</p>
         <div class="divider"></div>
-        <p style="font-size:13px; color:rgba(200,196,180,0.6)">Core competencies are highlighted in the adjacent section.</p>
+        <p style="font-size:13px; color:rgba(200,196,180,0.6)" data-i18n="skills-note">Core competencies are highlighted in the adjacent section</p>
       </div>
       <div class="reveal">
         <div class="skills-bars">
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Marketing Strategy & Execution</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Social Media Management</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Market Research & Positioning</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Project Management</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Financial & Business Analysis</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Intercultural Communication</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Content Creation</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Brand Strategy & Development</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Analytics & Automation</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Photography & Design</span>
-            </div>
-            <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
-          </div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill1">Marketing Strategy & Execution</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill2">Social Media Management</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill3">Market Research & Positioning</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill4">Project Management</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill5">Financial & Business Analysis</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill6">Intercultural Communication</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill7">Content Creation</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill8">Brand Strategy & Development</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill9">Analytics & Automation</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
+          <div class="skill-item"><div class="skill-header"><span class="skill-name" data-i18n="skill10">Photography & Design</span></div><div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div></div>
         </div>
       </div>
     </div>
@@ -702,47 +587,39 @@ automation. </p>
 <section id="values">
   <div class="section-wrap">
     <div class="section-header reveal">
-      <span class="section-tag">What I Stand For</span>
-      <h2>My Core <em>Values</em></h2>
+      <span class="section-tag" data-i18n="values-tag">What I Stand For</span>
+      <h2 data-i18n="values-h2">My Core <em>Values</em></h2>
     </div>
     <div class="values-intro reveal">
-      <p>Good marketing is grounded in honest communication, cultural understanding, and genuine curiosity. <br>
-Good companies prioritize sustainability, innovation, and responsibility, aiming to make a positive impact. <br>
-Good people are driven by integrity, empathy, and commitment to continuous learning and growth.</p>
+      <p data-i18n="values-intro">Good marketing is grounded in honest communication, cultural understanding, and genuine curiosity. <br>Good companies prioritize sustainability, innovation, and responsibility, aiming to make a positive impact. <br>Good people are driven by integrity, empathy, and commitment to continuous learning and growth.</p>
     </div>
     <div class="values-grid">
       <div class="value-item reveal">
         <div class="value-num">I</div>
         <div class="value-body">
-          <h4>Authenticity First</h4>
-          <p>The most effective marketing is honest. I strive to create campaigns that feel real, reflect genuine brand 
-values, and respect the intelligence of the audience, while keeping it fun.</p>
+          <h4 data-i18n="value1-title">Authenticity First</h4>
+          <p data-i18n="value1-desc">The most effective marketing is honest. I strive to create campaigns that feel real, reflect genuine brand values, and respect the intelligence of the audience, while keeping it fun.</p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">II</div>
         <div class="value-body">
-          <h4>Results with Integrity</h4>
-          <p>I care about performance and accountability. I want my work to deliver measurable results. However, this 
-will never be at the expense of honesty, ethics, or long-term brand health.</p>
+          <h4 data-i18n="value2-title">Results with Integrity</h4>
+          <p data-i18n="value2-desc">I care about performance and accountability. I want my work to deliver measurable results. However, this will never be at the expense of honesty, ethics, or long-term brand health.</p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">III</div>
         <div class="value-body">
-          <h4>Continuous Learning</h4>
-          <p>Marketing evolves every day. I embrace change, actively seek new knowledge, and treat every project as an 
-opportunity to grow. Technology is ever-changing, I think we'd better pay attention to the future as well 
-as our history. </p>
+          <h4 data-i18n="value3-title">Continuous Learning</h4>
+          <p data-i18n="value3-desc">Marketing evolves every day. I embrace change, actively seek new knowledge, and treat every project as an opportunity to grow. Technology is ever-changing, I think we'd better pay attention to the future as well as our history.</p>
         </div>
       </div>
       <div class="value-item reveal">
         <div class="value-num">IV</div>
         <div class="value-body">
-          <h4>Cultural Curiosity</h4>
-          <p>Having studied and worked in the US, Germany, France, and Panama, I've learned that understanding 
-people's context is the foundation of any meaningful message. I bring this intercultural lens to every brief 
-I work on and I'm not afraid to ask questions!</p>
+          <h4 data-i18n="value4-title">Cultural Curiosity</h4>
+          <p data-i18n="value4-desc">Having studied and worked in the US, Germany, France, and Panama, I've learned that understanding people's context is the foundation of any meaningful message. I bring this intercultural lens to every brief I work on and I'm not afraid to ask questions!</p>
         </div>
       </div>
     </div>
@@ -753,70 +630,64 @@ I work on and I'm not afraid to ask questions!</p>
 <section id="contact">
   <div class="section-wrap">
     <div class="section-header reveal">
-      <span class="section-tag">Get in Touch</span>
-      <h2>Let's <em>Connect</em></h2>
+      <span class="section-tag" data-i18n="contact-tag">Get in Touch</span>
+      <h2 data-i18n="contact-h2">Let's <em>Connect</em></h2>
     </div>
     <div class="contact-layout">
       <div class="contact-info reveal">
-        <h3>Whether you have an opportunity, a collaboration idea, or just want to talk marketing,
-           I'd love to hear from you!</h3>
+        <h3 data-i18n="contact-intro">Whether you have an opportunity, a collaboration idea, or just want to talk marketing, I'd love to hear from you!</h3>
         <div class="divider"></div>
         <div class="contact-detail">
           <div class="contact-icon">🔗</div>
-          <div>
-            <a href="https://www.linkedin.com/in/charlotte-e-vogel">linkedin.com/in/charlotte-e-vogel</a>
-          </div>
+          <div><a href="https://www.linkedin.com/in/charlotte-e-vogel">linkedin.com/in/charlotte-e-vogel</a></div>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
-            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
               <path d="M12 3v13M7 11l5 5 5-5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div>
-            <a href="https://www.dropbox.com/scl/fi/s4ce222or1zt2m2c3ogg1/Charlotte-Vogel-Resume-2025.pdf?rlkey=45bjrtv5uzzd9qjb6pftz89xj&dl=1" download>Download English Resume</a>
-          </div>
+          <div><a href="https://www.dropbox.com/scl/fi/s4ce222or1zt2m2c3ogg1/Charlotte-Vogel-Resume-2025.pdf?rlkey=45bjrtv5uzzd9qjb6pftz89xj&dl=1" download data-i18n="cv-en">Download English Resume</a></div>
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
-            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
               <path d="M12 3v13M7 11l5 5 5-5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <a href="https://www.dropbox.com/scl/fi/c1gx7ni7fwh2b85qqi8v7/Charlotte-E-Vogel-Deutsch-Resume.pdf?rlkey=oqbv4ybjqmduyshhfjxekiy5v&dl=1" download>Download German Resume</a>
+          <a href="https://www.dropbox.com/scl/fi/c1gx7ni7fwh2b85qqi8v7/Charlotte-E-Vogel-Deutsch-Resume.pdf?rlkey=oqbv4ybjqmduyshhfjxekiy5v&dl=1" download data-i18n="cv-de">Download German Resume</a>
         </div>
         <div class="divider"></div>
-        <p style="font-size:13px; color:rgba(200,196,180,0.6)">I typically respond within 24 hours. <br> 
-          I'm currently open to full-time positions, internships, and freelance projects in marketing.</p>
+        <p style="font-size:13px; color:rgba(200,196,180,0.6)" data-i18n="contact-note">I typically respond within 24 hours. <br>I'm currently open to full-time positions, internships, and freelance projects in marketing.</p>
       </div>
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="d80d4d60-c6c6-44c6-bc91-2aaa983e7c4a">
         <input type="hidden" name="subject" value="Neue Nachricht von deiner Website">
         <div class="form-row">
-          <label>Your Name</label>
+          <label data-i18n="form-name">Your Name</label>
           <input type="text" name="name" placeholder="Jane Smith" required>
         </div>
         <div class="form-row">
-          <label>Email Address</label>
+          <label data-i18n="form-email">Email Address</label>
           <input type="email" name="email" placeholder="jane@company.com" required>
         </div>
         <div class="form-row">
-          <label>Topic</label>
+          <label data-i18n="form-topic">Topic</label>
           <select name="topic">
-            <option value="" disabled selected>Please select …</option>
-            <option>Job Opportunity</option>
-            <option>Collaboration</option>
-            <option>Freelance Project</option>
-            <option>Connect</option>
-            <option>Other</option>
+            <option value="" disabled selected data-i18n="form-select">Please select …</option>
+            <option data-i18n="topic1">Job Opportunity</option>
+            <option data-i18n="topic2">Collaboration</option>
+            <option data-i18n="topic3">Freelance Project</option>
+            <option data-i18n="topic4">Connect</option>
+            <option data-i18n="topic5">Other</option>
           </select>
         </div>
         <div class="form-row">
-          <label>Your Message</label>
+          <label data-i18n="form-message">Your Message</label>
           <textarea name="message" placeholder="Tell me a little about what you have in mind …" required></textarea>
         </div>
         <input type="checkbox" name="botcheck" style="display:none">
-        <button type="submit" class="form-submit"><span>Send Message</span></button>
+        <button type="submit" class="form-submit"><span data-i18n="form-submit">Send Message</span></button>
       </form>
     </div>
   </div>
@@ -826,16 +697,125 @@ I work on and I'm not afraid to ask questions!</p>
 <footer>
   <div class="footer-logo">Charlotte <span>Vogel</span></div>
   <ul class="footer-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#goals">Goals</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#home" data-i18n="footer-home">Home</a></li>
+    <li><a href="#about" data-i18n="nav-about">About</a></li>
+    <li><a href="#goals" data-i18n="nav-goals">Goals</a></li>
+    <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
   </ul>
-  <div class="copy">© 2026 Charlotte Vogel — Marketing Professional</div>
+  <div class="copy">© 2026 Charlotte Vogel — <span data-i18n="footer-copy">Marketing Professional</span></div>
 </footer>
 
 <script>
-  // Custom cursor
+  // TRANSLATIONS
+  // Only English (en) is complete. The German (de) object only needs to contain
+  // keys that differ from English. Everything else automatically falls back to en.
+  const translations = {
+    en: {
+      'nav-about': 'About',
+      'nav-goals': 'Goals',
+      'nav-skills': 'Skills',
+      'nav-values': 'Values',
+      'nav-contact': 'Contact',
+      'footer-home': 'Home',
+      'footer-copy': 'Marketing Professional',
+
+      'hero-tag': 'Marketing Professional',
+      'hero-h1': 'Crafting <em>Brands</em><br>That Matter',
+      'hero-desc': `I'm Charlotte, welcome to my personal branding space!<br>As a dual-degree graduate in International Business and Marketing with hands-on experience across various sectors, I've learned the value in making oneself known. So let's get to know each other!<br><br>Here you'll discover how I think, create, and work to bridge strategy, creativity, and intercultural insight to build brands that genuinely resonate.`,
+      'hero-btn': 'Explore My Journey',
+      'stat-degrees': 'Degrees Earned',
+      'stat-countries': 'Countries Worked In',
+      'stat-ambition': 'Ambition',
+
+      'about-tag': 'About Me',
+      'about-h2': 'Where <em>Creativity</em><br>Meets Strategy',
+      'about-p1': 'My name is Charlotte Elizabeth Vogel. I hold a dual Bachelor\'s degree in International Business from Hochschule Harz (Germany) and in Business Management & Marketing from Burgundy School of Business (France), both completed in October 2024.',
+      'about-p2': 'My experience spans three countries and multiple industries: from managing business operations at a hospitality venture in Panama, to developing digital marketing content for a software company in Germany, to leading the social media marketing of an entire academic programme as a student project manager.',
+      'about-p3': 'I\'m drawn to roles where strategy meets creativity. I value building brand presence, crafting targeted campaigns, and navigating multicultural outreach. I speak conversational French and functional German, and thrive in international, cross-functional teams.',
+      'tag1': 'Marketing Strategy', 'tag2': 'Social Media', 'tag3': 'Market Research',
+      'tag4': 'Brand Positioning', 'tag5': 'Intercultural Communication', 'tag6': 'Project Management',
+
+      'goals-tag': 'Vision & Goals',
+      'goals-h2': 'Where I\'m <em>Heading</em>',
+      'goal1-title': 'Build Brands<br>with Purpose',
+      'goal1-desc': 'My experience across Panama, Germany, and the United States has shown me that the most powerful brands stand for something real. I want to help companies define their identity, communicate their values, and build lasting audience relationships… not just drive clicks.',
+      'goal2-title': 'Deepen Digital<br>Marketing Expertise',
+      'goal2-desc': 'The way I see it, there\'s never a time to stop learning. Especially not with the rate at which technology is developing. This is why I\'m actively expanding my knowledge in performance marketing and marketing automation. Great marketing is both creative and rigorously data-driven, and I plan to keep up.',
+      'goal3-title': 'Lead International<br>Campaigns',
+      'goal3-desc': 'With a double degree from institutions in Europe, plus tri-continental work experience, I\'m positioned to contribute to marketing strategies that cross borders and connect with diverse audiences while staying authentic. International marketing thrives when cultural differences are considered in content development.',
+      'goal4-title': 'Grow as a<br>Strategic Storyteller',
+      'goal4-desc': 'From leading the social media marketing of Hochschule Harz\'s International Business programme to running a marketing campaign at a resort and wellness center, I\'ve learned that the best campaigns start with a compelling story. I want to keep honing that craft at scale.',
+      'goal5-title': 'Join an Ambitious<br>Team',
+      'goal5-desc': 'I\'m looking for a forward-thinking company or agency where I can learn fast, contribute meaningfully, and grow alongside talented colleagues who share a passion for excellent work, bold ideas, and a truly global perspective.',
+      'goal6-title': 'Drive Measurable<br>Impact',
+      'goal6-desc': 'Whether it\'s improving customer targeting through market research, growing a brand\'s social following, or optimising business processes, I want my work to produce results that are tangible, trackable, and incredibly valuable.',
+
+      'skills-tag': 'Expertise',
+      'skills-h2': 'My <em>Skills</em>',
+      'skills-p1': 'I\'ve developed a versatile marketing skill set across real-world roles in three countries. In addition to my work experience, my academic background has provided me with a strong grasp of business fundamentals, complimenting my marketing career.',
+      'skills-p2': 'From crafting digital ad content for a German software startup to overseeing the full marketing presence of a hospitality business in Panama, I\'ve navigated diverse industries and markets.',
+      'skills-p3': 'With a dual degree in International Business and Business Management & Marketing I have built a solid foundation in strategy, finance, and communications, while leading initiatives and collaborating in cross functional teams.',
+      'skills-note': 'Core competencies are highlighted in the adjacent section.',
+      'skill1': 'Marketing Strategy & Execution', 'skill2': 'Social Media Management',
+      'skill3': 'Market Research & Positioning', 'skill4': 'Project Management',
+      'skill5': 'Financial & Business Analysis', 'skill6': 'Intercultural Communication',
+      'skill7': 'Content Creation', 'skill8': 'Brand Strategy & Development',
+      'skill9': 'Analytics & Automation', 'skill10': 'Photography & Design',
+
+      'values-tag': 'What I Stand For',
+      'values-h2': 'My Core <em>Values</em>',
+      'values-intro': 'Good marketing is grounded in honest communication, cultural understanding, and genuine curiosity.<br>Good companies prioritize sustainability, innovation, and responsibility, aiming to make a positive impact.<br>Good people are driven by integrity, empathy, and commitment to continuous learning and growth.',
+      'value1-title': 'Authenticity First',
+      'value1-desc': 'The most effective marketing is honest. I strive to create campaigns that feel real, reflect genuine brand values, and respect the intelligence of the audience, while keeping it fun.',
+      'value2-title': 'Results with Integrity',
+      'value2-desc': 'I care about performance and accountability. I want my work to deliver measurable results. However, this will never be at the expense of honesty, ethics, or long-term brand health.',
+      'value3-title': 'Continuous Learning',
+      'value3-desc': 'Marketing evolves every day. I embrace change, actively seek new knowledge, and treat every project as an opportunity to grow. Technology is ever-changing, I think we\'d better pay attention to the future as well as our history.',
+      'value4-title': 'Cultural Curiosity',
+      'value4-desc': 'Having studied and worked in the US, Germany, France, and Panama, I\'ve learned that understanding people\'s context is the foundation of any meaningful message. I bring this intercultural lens to every brief I work on and I\'m not afraid to ask questions!',
+
+      'contact-tag': 'Get in Touch',
+      'contact-h2': 'Let\'s <em>Connect</em>',
+      'contact-intro': 'Whether you have an opportunity, a collaboration idea, or just want to talk marketing, I\'d love to hear from you!',
+      'contact-note': 'I typically respond within 24 hours.<br>I\'m currently open to full-time positions, internships, and freelance projects in marketing.',
+      'cv-en': 'Download English Resume',
+      'cv-de': 'Download German Resume',
+      'form-name': 'Your Name', 'form-email': 'Email Address', 'form-topic': 'Topic',
+      'form-select': 'Please select …', 'form-message': 'Your Message', 'form-submit': 'Send Message',
+      'topic1': 'Job Opportunity', 'topic2': 'Collaboration', 'topic3': 'Freelance Project',
+      'topic4': 'Connect', 'topic5': 'Other',
+    },
+
+    de: {
+      'nav-about': 'Über mich',
+      'nav-goals': 'Ziele',
+      'nav-skills': 'Fähigkeiten',
+      'nav-values': 'Werte',
+      'nav-contact': 'Kontakt',
+      'footer-home': 'Startseite',
+      'footer-copy': 'Marketing Profi',
+      'cv-en': 'Englischen Lebenslauf herunterladen',
+      'cv-de': 'Deutschen Lebenslauf herunterladen',
+      // Remaining German Translations have to be put in
+      // Any key left out will be put in English
+    }
+  };
+
+  function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.documentElement.lang = lang;
+
+    const t = translations[lang];
+    const fallback = translations['en'];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.innerHTML = t[key] ?? fallback[key] ?? '';
+    });
+  }
+
+  // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -858,7 +838,7 @@ I work on and I'm not afraid to ask questions!</p>
     el.addEventListener('mouseleave', () => { ring.style.width = '32px'; ring.style.height = '32px'; ring.style.opacity = '0.5'; });
   });
 
-  // Scroll reveal
+  // SCROLL REVEAL
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach((entry, i) => {
@@ -870,7 +850,7 @@ I work on and I'm not afraid to ask questions!</p>
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Skill bar animation
+  // SKILL BARS
   const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -881,7 +861,7 @@ I work on and I'm not afraid to ask questions!</p>
   }, { threshold: 0.3 });
   document.querySelectorAll('.skills-bars').forEach(el => skillObserver.observe(el));
 
-  // Nav active state
+  // NAV ACTIVE STATE
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -892,7 +872,7 @@ I work on and I'm not afraid to ask questions!</p>
     });
   });
 
-  // Contact form
+  // CONTACT FORM
   const form = document.querySelector('.contact-form');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
